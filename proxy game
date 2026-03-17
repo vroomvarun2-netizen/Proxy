@@ -1,0 +1,50 @@
+const express = require("express");
+const path = require("path");
+
+const app = express();
+const PORT = 3000;
+
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
+
+app.listen(PORT, () => {
+    console.log(`Game portal running at http://localhost:${PORT}`);
+});
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🎮 My Game Portal</h1>
+
+    <div class="game">
+        <h2>Snake</h2>
+        <iframe src="https://playsnake.org/" width="600" height="400"></iframe>
+    </div>
+
+    <div class="game">
+        <h2>Tetris</h2>
+        <iframe src="https://tetris.com/play-tetris" width="600" height="400"></iframe>
+    </div>
+
+    <div class="game">
+        <h2>2048</h2>
+        <iframe src="https://play2048.co/" width="600" height="400"></iframe>
+    </div>
+
+</body>body {
+    font-family: Arial;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.game {
+    margin: 20px auto;
+    padding: 10px;
+    background: #222;
+    border-radius: 10px;
+    width: 650px;
+}node server.js
